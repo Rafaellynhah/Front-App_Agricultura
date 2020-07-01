@@ -17,7 +17,6 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
   final _produtividade_esperadaController = TextEditingController();
 
 
-
   String dropDownValue = 'Plantação';
 
   Widget _constroiCadastroNome() {
@@ -62,7 +61,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
     );
   }
 
-  Widget _constroiCadastroEmail() {
+  Widget _constroiCadastroQtdInicial() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -104,7 +103,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
     );
   }
 
-  Widget _constroiCadastroSenha() {
+  Widget _constroiCadastroTipoRecurso() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -150,7 +149,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
     );
   }
 
-  Widget _constroiQuantidadeInicial() {
+  Widget _constroiCadastroProdutividadeEsperada() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -319,11 +318,11 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
                   SizedBox(height: 30.0),
                   _constroiCadastroNome(),
                   SizedBox(height: 15.0),
-                  _constroiCadastroEmail(),
+                  _constroiCadastroQtdInicial(),
                   SizedBox(height: 15.0),
-                  _constroiCadastroSenha(),
+                  _constroiCadastroTipoRecurso(),
                   SizedBox(height: 15.0),
-                  _constroiQuantidadeInicial(),
+                  _constroiCadastroProdutividadeEsperada(),
                   SizedBox(height: 15.0),
                   _btnCadastrar(),
                   SizedBox(height: 20.0),

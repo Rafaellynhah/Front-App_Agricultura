@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:agriculturapp/helpers/login_delegate.dart';
 import 'package:agriculturapp/services/expenses_services.dart';
+import 'package:agriculturapp/services/tipogasto_service.dart';
 import 'package:agriculturapp/services/tiporecurso_service.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -90,7 +91,6 @@ class _lista_tipogastoState extends State<lista_tipogasto> {
   }
 
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,14 +104,14 @@ class _lista_tipogastoState extends State<lista_tipogasto> {
             icon: Icon(
               Icons.add,
             ),
-            onPressed: () => LoginDelegate.mudarParaTelaDeCadastrarRecurso(context),
+            onPressed: () => LoginDelegate.mudarParaTelaDeCadastrarTipoDeGastos(context),
           )
         ],
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const <Widget>[
+          children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -139,15 +139,19 @@ class _lista_tipogastoState extends State<lista_tipogasto> {
             ),
             ListTile(
               title: Text('Recursos'),
+              onTap: () => LoginDelegate.mudarParaTelaDeRecursos(context),
             ),
             ListTile(
               title: Text('Gastos'),
+              onTap: () => LoginDelegate.mudarParaTelaDeGastos(context),
             ),
             ListTile(
               title: Text('Tipo de Recurso'),
+              onTap: () => LoginDelegate.mudarParaTelaDeTipodeRecurso(context),
             ),
             ListTile(
               title: Text('Tipo de Gasto'),
+              onTap: () => LoginDelegate.mudarParaTelaDeTipodeGsto(context),
             ),
           ],
         ),

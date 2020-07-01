@@ -17,7 +17,7 @@ class _ExpensesRegisterState extends State<ExpensesRegister> {
 
   String dropDownValue = 'Água';
 
-  Widget _constroiCadastroNome() {
+  Widget _constroiCadastroMes() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -59,7 +59,7 @@ class _ExpensesRegisterState extends State<ExpensesRegister> {
     );
   }
 
-  Widget _constroiCadastroEmail() {
+  Widget _constroiCadastroQtdMensal() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -101,7 +101,7 @@ class _ExpensesRegisterState extends State<ExpensesRegister> {
     );
   }
 
-  Widget _constroiCadastroSenha() {
+  Widget _constroiCadastroTipoGasto() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -269,11 +269,11 @@ class _ExpensesRegisterState extends State<ExpensesRegister> {
                     ),
                   ),
                   SizedBox(height: 30.0),
-                  _constroiCadastroNome(),
+                  _constroiCadastroMes(),
                   SizedBox(height: 15.0),
-                  _constroiCadastroEmail(),
+                  _constroiCadastroQtdMensal(),
                   SizedBox(height: 15.0),
-                  _constroiCadastroSenha(),
+                  _constroiCadastroTipoGasto(),
                   SizedBox(height: 20.0),
                   _btnCadastrar(),
                   SizedBox(height: 20.0),

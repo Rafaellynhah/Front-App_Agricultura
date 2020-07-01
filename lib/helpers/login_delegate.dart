@@ -30,7 +30,7 @@ class LoginDelegate {
     );
   }
 
-  static mudarParaTelaDeUsuario(BuildContext context) {
+  static mudarParaTelaDeRecursos(BuildContext context) {
     Navigator.push(
         context,
         MaterialPageRoute(

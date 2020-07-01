@@ -138,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => LoginDelegate.mudarParaTelaDeUsuario(context),
+        onPressed: () => LoginDelegate.mudarParaTelaDeRecursos(context),
         padding: EdgeInsets.all(15.0),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
@@ -158,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _botaoRegistrar() {
     return GestureDetector(
-      onTap: () => LoginDelegate.mudarParaTelaDeRegistro(context),
+      onTap: () => LoginDelegate.mudarParaTelaDeRecursos(context),
       child: RichText(
         text: TextSpan(children: [
           TextSpan(
