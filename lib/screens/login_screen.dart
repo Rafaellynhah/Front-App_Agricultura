@@ -158,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _botaoRegistrar() {
     return GestureDetector(
-      onTap: () => LoginDelegate.mudarParaTelaDeRecursos(context),
+      onTap: () => LoginDelegate.mudarParaTelaDeRegistro(context),
       child: RichText(
         text: TextSpan(children: [
           TextSpan(

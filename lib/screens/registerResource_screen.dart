@@ -85,7 +85,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
               ]),
           height: 60.0,
           child: TextField(
-            obscureText: true,
+            obscureText: false,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
@@ -173,7 +173,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
               ]),
           height: 60.0,
           child: TextField(
-            obscureText: true,
+            obscureText: false,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
