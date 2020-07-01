@@ -45,7 +45,7 @@ class _RegisterTypeState extends State<RegisterTypeScreen> {
                 Icons.dashboard,
                 color: Colors.white,
               ),
-              hintText: 'Entre com o Nome do Tipo de Gasto',
+              hintText: 'Nome',
               hintStyle: TextStyle(color: Colors.white54),
             ),
             controller: _nomeController,
