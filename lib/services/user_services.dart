@@ -10,6 +10,8 @@ class ResourseServices {
   dynamic produtividade;
   dynamic problema;
   dynamic tipoRecurso;
+  dynamic dtEntrada;
+  dynamic dtSaida;
 
   ResourseServices({
     this.id,
@@ -20,6 +22,8 @@ class ResourseServices {
     this.produtividade,
     this.problema,
     this.tipoRecurso,
+    this.dtEntrada,
+    this.dtSaida
   });
 
   factory ResourseServices.fromJson(Map<String, dynamic> json) {
@@ -31,7 +35,9 @@ class ResourseServices {
       produtividadeEsperada: json['produtividade_esperada'] as int,
       produtividade: json['produtividade'] as double,
       problema: json['problema'] as String,
-      tipoRecurso: json['tp_recurso_id'] as int,
+      dtEntrada: json['problema'] as String,
+      dtSaida: json['dt_entrada'] as String,
+      tipoRecurso: json['dt_saida'] as int,
     );
   }
 

@@ -60,6 +60,12 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
               label: Text('Problema'),
             ),
             DataColumn(
+              label: Text('Data Entrada'),
+            ),
+            DataColumn(
+              label: Text('Data Saida'),
+            ),
+            DataColumn(
               label: Text('Editar / Deletar'),
             ),
           ],
@@ -121,6 +127,22 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
                     DataCell(
                       Text(
                         _resources.problema.toString(),
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        _resources.dtEntrada.toString(),
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        _resources.dtSaida.toString(),
                         style: TextStyle(
                           color: Colors.black,
                         ),

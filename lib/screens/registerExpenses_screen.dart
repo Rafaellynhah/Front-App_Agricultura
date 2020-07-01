@@ -64,7 +64,7 @@ class _ExpensesRegisterState extends State<ExpensesRegister> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Quantidade Mensal',
+          'Valor Mensal',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10.0),

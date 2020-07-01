@@ -41,12 +41,9 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
               label: Text('Mes'),
             ),
             DataColumn(
-              label: Text('Quantidade Mensal'),
+              label: Text('Valor Mensal'),
             ),
             // Lets add one more column to show a delete button
-            DataColumn(
-              label: Text('Media de Gasto'),
-            ),
             DataColumn(
               label: Text('Editar / Deletar'),
             ),
@@ -69,14 +66,6 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
                     DataCell(
                       Text(
                         _expenses.qtdMensal.toString(),
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        _expenses.mediaGasto.toString(),
                         style: TextStyle(
                           color: Colors.black,
                         ),

@@ -15,6 +15,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
   final _nomeController = TextEditingController();
   final _qtd_incialController = TextEditingController();
   final _produtividade_esperadaController = TextEditingController();
+  final _dtEntradaController = TextEditingController();
 
 
   String dropDownValue = 'Plantação';
@@ -127,9 +128,8 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
                   dropDownValue = newValue;
                 });
               },
-              items:
-                  <String>['Plantação', 'Animal'].map<DropdownMenuItem<String>>(
-                (String value) {
+              items: <String>['Plantação', 'Animal'].map<DropdownMenuItem<String>>(
+                    (String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(
@@ -192,6 +192,48 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
     );
   }
 
+  Widget _constroiCadastroiDtEntrada() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Data Entrada',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.black38,
+              borderRadius: BorderRadius.circular(10.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 6.0,
+                  offset: Offset(0, 2),
+                ),
+              ]),
+          height: 60.0,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.calendar_today,
+                color: Colors.white,
+              ),
+              hintText: 'Entre com a Data',
+              hintStyle: TextStyle(color: Colors.white54),
+            ),
+            controller: _dtEntradaController,
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _btnCadastrar() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
@@ -211,6 +253,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
                         _nomeController.text = '';
                         _qtd_incialController.text = '';
                         _produtividade_esperadaController.text = '';
+                        _dtEntradaController.text = '';
                       },
                       child: Text('OK'),
                     )
@@ -323,6 +366,8 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
                   _constroiCadastroTipoRecurso(),
                   SizedBox(height: 15.0),
                   _constroiCadastroProdutividadeEsperada(),
+                  SizedBox(height: 15.0),
+                  _constroiCadastroiDtEntrada(),
                   SizedBox(height: 15.0),
                   _btnCadastrar(),
                   SizedBox(height: 20.0),

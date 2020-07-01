@@ -13,7 +13,7 @@ class lista_tipogasto extends StatefulWidget {
 }
 
 class _lista_tipogastoState extends State<lista_tipogasto> {
-  List<tiporecurso_service> tp_gasto;
+  List<tipogasto_service> tp_gasto;
   GlobalKey<ScaffoldState> _expensesKey;
 
   @override
@@ -25,7 +25,7 @@ class _lista_tipogastoState extends State<lista_tipogasto> {
   }
 
   _getExpenses() {
-    tiporecurso_service.getExpenses().then((_tp_gasto) {
+    tipogasto_service.getExpenses().then((_tp_gasto) {
       setState(() {
         tp_gasto = _tp_gasto;
       });

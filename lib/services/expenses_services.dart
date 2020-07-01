@@ -3,18 +3,15 @@ import 'package:http/http.dart' as http;
 
 class ExpensesServices {
   dynamic id;
-  dynamic mediaGasto;
   dynamic mes;
   dynamic qtdMensal;
 
-  ExpensesServices({this.id, this.mediaGasto, this.mes, this.qtdMensal});
+  ExpensesServices({this.id, this.mes, this.qtdMensal});
 
   factory ExpensesServices.fromJson(Map<String, dynamic> json) {
     return ExpensesServices(
       id: json['id'] as int,
-      mediaGasto: json['media_gasto'] as double,
       mes: json['mes'] as String,
-      qtdMensal: json['qtd_mensal'] as double,
     );
   }
 
