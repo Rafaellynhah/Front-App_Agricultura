@@ -67,7 +67,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Quantidade Inicial',
+          'Quantidade inicial',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10.0),
@@ -85,6 +85,7 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
               ]),
           height: 60.0,
           child: TextField(
+            obscureText: true,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
@@ -302,8 +303,9 @@ class _RegisterResourceScreenState extends State<RegisterResourceScreen> {
     Map<String, dynamic> params = Map<String, dynamic>();
 
     params["nome"] = _nomeController.text;
-    params["qtd_incial"] = _qtd_incialController.text;
+    params["qtd_inicial"] = _qtd_incialController.text;
     params["produtividade_esperada"] = _produtividade_esperadaController.text;
+    params["dt_entrada"] = _dtEntradaController.text;
 
 
     var body = json.encode(params);

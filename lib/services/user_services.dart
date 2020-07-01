@@ -35,9 +35,9 @@ class ResourseServices {
       produtividadeEsperada: json['produtividade_esperada'] as int,
       produtividade: json['produtividade'] as double,
       problema: json['problema'] as String,
-      dtEntrada: json['problema'] as String,
-      dtSaida: json['dt_entrada'] as String,
-      tipoRecurso: json['dt_saida'] as int,
+      dtEntrada: json['dt_entrada'] as String,
+      dtSaida: json['dt_saida'] as String,
+      tipoRecurso: json['tp_gasto_id'] as int,
     );
   }
 

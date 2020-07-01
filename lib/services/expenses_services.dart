@@ -12,6 +12,7 @@ class ExpensesServices {
     return ExpensesServices(
       id: json['id'] as int,
       mes: json['mes'] as String,
+      qtdMensal: json['qtd_mensal'] as String,
     );
   }
 
