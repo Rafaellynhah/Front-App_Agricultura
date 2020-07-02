@@ -40,4 +40,20 @@ class ExpensesServices {
         .map<ExpensesServices>((json) => ExpensesServices.fromJson(json))
         .toList();
   }
+
+  static Future<dynamic> deletarGasto(String id) async {
+    try {
+      var url = baseUrl + "/gasto/deletar/$id";
+      final response =
+      await http.delete(url, headers: {"Content-Type": "application/json"});
+      if (200 == response.statusCode) {
+        return response.statusCode;
+      } else {
+        return 'error';
+      }
+    } catch (e) {
+      return 'error';
+    }
+  }
+
 }

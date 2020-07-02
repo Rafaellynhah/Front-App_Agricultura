@@ -39,7 +39,20 @@ class tiporecurso_service {
         .toList();
   }
 
-
+  static Future<dynamic> deletarTipoRecurso(String id) async {
+    try {
+      var url = baseUrl + "/tiporecurso/deletar/$id";
+      final response =
+      await http.delete(url, headers: {"Content-Type": "application/json"});
+      if (200 == response.statusCode) {
+        return response.statusCode;
+      } else {
+        return 'error';
+      }
+    } catch (e) {
+      return 'error';
+    }
+  }
 
 
 }

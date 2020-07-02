@@ -65,4 +65,19 @@ class ResourseServices {
         .map<ResourseServices>((json) => ResourseServices.fromJson(json))
         .toList();
   }
+
+  static Future<dynamic> deleteRecursos(String id) async {
+    try {
+      var url = baseUrl + "/recursos/deletar/$id";
+      final response =
+      await http.delete(url, headers: {"Content-Type": "application/json"});
+      if (200 == response.statusCode) {
+        return response.statusCode;
+      } else {
+        return 'error';
+      }
+    } catch (e) {
+      return 'error';
+    }
+  }
 }

@@ -32,6 +32,15 @@ class _lista_tipogastoState extends State<lista_tipogasto> {
     });
   }
 
+  _deletarTipoGasto(tipogasto_service expenses) {
+    tipogasto_service.deletarTipoGasto(expenses.id.toString()).then((result) {
+      if (200 == result) {
+        _getExpenses();
+      }
+    });
+  }
+
+
   SingleChildScrollView _dataBody() {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
@@ -76,7 +85,8 @@ class _lista_tipogastoState extends State<lista_tipogasto> {
                           Icons.delete,
                           color: Colors.black,
                         ),
-                        onPressed: () {},
+                        onPressed: () {_deletarTipoGasto(_tp_gasto);
+                        },
                       ),
                     ],
                   ),
@@ -97,7 +107,7 @@ class _lista_tipogastoState extends State<lista_tipogasto> {
       key: _expensesKey,
       appBar: AppBar(
         backgroundColor: Color(0xFF00E676),
-        title: const Text('Tipo Gasto'),
+        title: const Text('Tipo de Gastos'),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -146,11 +156,11 @@ class _lista_tipogastoState extends State<lista_tipogasto> {
               onTap: () => LoginDelegate.mudarParaTelaDeGastos(context),
             ),
             ListTile(
-              title: Text('Tipo de Recurso'),
+              title: Text('Tipo de Recursos'),
               onTap: () => LoginDelegate.mudarParaTelaDeTipodeRecurso(context),
             ),
             ListTile(
-              title: Text('Tipo de Gasto'),
+              title: Text('Tipo de Gastos'),
               onTap: () => LoginDelegate.mudarParaTelaDeTipodeGsto(context),
             ),
           ],

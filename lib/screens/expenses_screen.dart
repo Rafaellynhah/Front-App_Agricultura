@@ -30,6 +30,13 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
     });
   }
 
+  _deletarGasto(ExpensesServices expenses) {
+    ExpensesServices.deletarGasto(expenses.id.toString()).then((result) {
+      if (200 == result) {
+        _getExpenses();
+      }
+    });
+  }
   SingleChildScrollView _dataBody() {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
@@ -64,7 +71,7 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
                       ),
                     ),
                     DataCell(
-                      Text(
+                      Text('R\$ ' +
                         _expenses.qtdMensal.toString(),
                         style: TextStyle(
                           color: Colors.black,
@@ -86,7 +93,7 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
                               Icons.delete,
                               color: Colors.black,
                             ),
-                            onPressed: () {},
+                              onPressed: () => _deletarGasto(_expenses),
                           ),
                         ],
                       ),
@@ -99,6 +106,7 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
       ),
     );
   }
+
 
   @override
   @override
@@ -156,11 +164,11 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
               onTap: () => LoginDelegate.mudarParaTelaDeGastos(context),
             ),
             ListTile(
-              title: Text('Tipo de Recurso'),
+              title: Text('Tipo de Recursos'),
               onTap: () => LoginDelegate.mudarParaTelaDeTipodeRecurso(context),
             ),
             ListTile(
-              title: Text('Tipo de Gasto'),
+              title: Text('Tipo de Gastos'),
               onTap: () => LoginDelegate.mudarParaTelaDeTipodeGsto(context),
             ),
           ],

@@ -30,6 +30,13 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
     });
   }
 
+  _deletarRecursos(ResourseServices resourse) {
+    ResourseServices.deleteRecursos(resourse.id.toString()).then((result) {
+      if (200 == result) {
+        _getResources();
+      }
+    });
+  }
   SingleChildScrollView _dataBody() {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
@@ -110,7 +117,7 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
                     ),
                     DataCell(
                       Text(
-                        _resources.produtividade.toString(),
+                        _resources.produtividade.toString() + "%",
                         style: TextStyle(
                           color: Colors.black,
                         ),
@@ -163,7 +170,8 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
                               Icons.delete,
                               color: Colors.black,
                             ),
-                            onPressed: () {},
+                            onPressed: () {_deletarRecursos(_resources);
+                            },
                           ),
                         ],
                       ),
@@ -232,11 +240,11 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
               onTap: () => LoginDelegate.mudarParaTelaDeGastos(context),
             ),
             ListTile(
-              title: Text('Tipo de Recurso'),
+              title: Text('Tipo de Recursos'),
               onTap: () => LoginDelegate.mudarParaTelaDeTipodeRecurso(context),
             ),
             ListTile(
-              title: Text('Tipo de Gasto'),
+              title: Text('Tipo de Gastos'),
               onTap: () => LoginDelegate.mudarParaTelaDeTipodeGsto(context),
             ),
           ],

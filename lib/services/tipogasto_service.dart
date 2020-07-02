@@ -39,4 +39,19 @@ class tipogasto_service {
         .toList();
   }
 
+  static Future<dynamic> deletarTipoGasto(String id) async {
+    try {
+      var url = baseUrl + "/tipogasto/deletar/$id";
+      final response =
+      await http.delete(url, headers: {"Content-Type": "application/json"});
+      if (200 == response.statusCode) {
+        return response.statusCode;
+      } else {
+        return 'error';
+      }
+    } catch (e) {
+      return 'error';
+    }
+  }
+
 }
