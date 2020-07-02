@@ -5,14 +5,16 @@ class ExpensesServices {
   dynamic id;
   dynamic mes;
   dynamic qtdMensal;
+  dynamic tp_gasto;
 
-  ExpensesServices({this.id, this.mes, this.qtdMensal});
+  ExpensesServices({this.id, this.mes, this.qtdMensal, this.tp_gasto});
 
   factory ExpensesServices.fromJson(Map<String, dynamic> json) {
     return ExpensesServices(
       id: json['id'] as int,
       mes: json['mes'] as String,
       qtdMensal: json['qtd_mensal'] as double,
+      tp_gasto: json['tp_gasto'] as int,
     );
   }
 
